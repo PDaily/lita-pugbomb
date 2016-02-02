@@ -18,6 +18,7 @@ module Lita
         count = response.matches[0][1] || 5
         data = MultiJson.load(http.get(BASE_URL + "/bomb", count: count).body)
         data['pugs'].each do |pug|
+          sleep 0.5
           response.reply pug
         end
       end
